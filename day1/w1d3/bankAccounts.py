@@ -4,7 +4,7 @@ class BankAccount:
         self.balance = balance
 
     def deposit(self, amount):
-        self.deposit = self.deposit + amount
+        self.balance = self.balance + amount
         print(self.balance)
         return self
 
@@ -26,13 +26,10 @@ class BankAccount:
         return self
 
 
-my_bankAccount = BankAccount(0, 100)
+my_bankAccount = BankAccount(.6, 100)
 
 
-salvatore = BankAccount(.6, 100)
-salvatore.deposit(0).display_account_info().deposit(75).withdraw(
-    125).deposit(20).yield_interest().display_account_info()
+my_bankAccount2 = BankAccount(.6, 100)
+my_bankAccount.deposit(0).display_account_info().deposit(75).withdraw(125).deposit(20).yield_interest().display_account_info()
 
-charles = BankAccount(.6, 100)
-charles.withdraw(0).display_account_info().withdraw(100).withdraw(
-    125).withdraw(20).yield_interest().display_account_info()
+my_bankAccount2.deposit(0).display_account_info().deposit(75).withdraw(125).withdraw(20).withdraw(125).withdraw(85).yield_interest().display_account_info()
