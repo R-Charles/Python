@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+        <div class="one">
+            <div class="one">
+                <label for="name">Name: {{session['name']}}</label>
+            </div>
+            <div class="one">
+                <label for="location">Location: {{session['location']}}</label>
+            </div>
+            <div class="one">
+                <label for="favourite language">Favourite Language: {{session['favourite language']}} </label>
+            </div>
+
+            <div class="one">
+                <label for="comment">Comment: {{session['comment']}}</label>
+            </div>
+            <a href="/">return to survey</a>
+        </div>
+</body>
+</html>
