@@ -11,7 +11,7 @@ def index():
 def submit_page():
     return render_template('result.html')
 
-@app.route('/result', methods=['post'])
+@app.route('/submit', methods=['post'])
 def redirect_submit():
     session['name'] = request.form['name']
     session['locations'] = request.form['locations']
