@@ -13,9 +13,10 @@ def submit_page():
 
 @app.route('/submit', methods=['post'])
 def redirect_submit():
+    print(request.form)
     session['name'] = request.form['name']
     session['locations'] = request.form['locations']
-    session['favourite language'] = request.form['favourite language']
+    session['favourite_language'] = request.form['favourite_language']
     session['comment'] = request.form['comment']
     return redirect ('/result')
 

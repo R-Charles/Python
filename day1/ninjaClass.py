@@ -8,13 +8,17 @@ class Ninja:
         self.pet = pet 
         self.treats = treats
         self.pet_food = pet_food 
+        self.health = 100
+        self.energy = 50
+
+
 
     def walk(self):
-        print(f"I'm going to take my {self.pet} on a walk")
+        pass
     def feed(self):
-        print(f"I'm going to feed my {self.pet} some {self.treats}")
-    def bathe():
-        print()
+        pass
+    def bathe(self):
+        pass
 class Pet:
     def __init__(self, name, type, tricks, health, energy)
         self.name = name
@@ -24,10 +28,19 @@ class Pet:
         self.energy = energy
 
     def sleep(self):
-        print()
+        self.energy += 25
+        return self
+
     def eat(self):
-        print()
+        self.energy += 5
+        self.health += 10
+        return self
+
     def play(self):
-        print()
-    def noise():
-        print()
+        self.play += 5
+        self.energy -= 15
+        return self
+
+    def noise(self):
+        print("arf arf arf")
+        return self
