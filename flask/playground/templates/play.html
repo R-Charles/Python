@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: auto;
+        
+    }
+    .color{
+        display: flex;
+        justify-content: center;
+        width: 1000px;
+        height: 200px;
+    }
+    .color1{
+        /* background-color: red; */
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+</style>
+<body>
+    
+<!-- <div class="color"> -->
+    {% for i in range(0, num): %}
+        <div class="color1" style="background-color: {{color}};"></div>
+    {% endfor %}
+<!-- </div> -->
+
+
+
+    
+</body>
+</html>
