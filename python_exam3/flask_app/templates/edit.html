@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car</title>
+</head>
+<!-- login and registration -->
+<body>
+    <h1>Edit Car</h1>
+    <p>
+        <a href="/cars">
+            dashboard 
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout">
+            Logout
+        </a>
+    </p>
+    <form method="POST" action="/cars/{{current_car.id}}/edit">
+        
+        <div>
+            <label>
+                Price:
+            </label>
+            <input type="money" name="price" value="current_car.price" placeholder="current_car.price"/> 
+            {% for message in get_flashed_messages(category_filter = ['error_car_price'] ) %}
+                {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Model:
+            </label>
+            <input type="text" name="model" value="current_car.model" placeholder="current_car.model" /> 
+            {% for message in get_flashed_messages(category_filter = ['error_car_model'] ) %}
+                {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Make:
+            </label>
+            <input type="text" name="make" value="current_car.make" placeholder="current_car.make"/> 
+            {% for message in get_flashed_messages(category_filter = ['error_car_make'] ) %}
+                {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Year:
+            </label>
+            <input type="text" name="year" value="current_car.year" placeholder="current_car.year"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_car_year'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Description:
+            </label>
+            <textarea type="text" name="description" value="current_car.description" placeholder="current_car.description"></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_car_description'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+
+        <button>Update</button>
+    </form>
+</body>
+</html

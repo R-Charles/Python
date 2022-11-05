@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+</head>
+<style>
+    body{
+        background-color:#99cfff;
+background-image:
+radial-gradient(at 97% 22%, hsla(87,63%,77%,1) 0px, transparent 50%),
+radial-gradient(at 33% 62%, hsla(11,91%,73%,1) 0px, transparent 50%),
+radial-gradient(at 11% 26%, hsla(355,82%,68%,1) 0px, transparent 50%),
+radial-gradient(at 65% 91%, hsla(97,96%,69%,1) 0px, transparent 50%),
+radial-gradient(at 63% 49%, hsla(235,91%,69%,1) 0px, transparent 50%),
+
+    }
+
+</style>
+
+<body>
+    <div>
+        <h1>Rock On {{session['first_name']}} {{session['last_name']}}!!!</h1>
+    </div>
+    <div>
+        <p>
+            <a href="/band"><button>Dashboard</button></a>
+            </a>
+        </p>
+        <p>
+            <a href="/user/logout"><button>Logout</button></a>
+        </p>
+    </div>
+    
+    <a href="/mybands"><button>My Bands</button></a>
+
+<div id="sub-header"class="title">
+
+</div>
+    <form method="POST" action="/band/new">
+        </div>
+        <div>
+            <label>
+                Band Name:
+            </label>
+            <input type="text" name="band_name"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_band_name'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Founding Member:
+            </label>
+            <input type="text" name="founding_member" ></input>
+            {% for message in get_flashed_messages(category_filter = ['error_founder'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Music Genre:
+            </label>
+            <input type="text" name="genre"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_genre'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Home City:
+            </label>
+            <textarea type="text" name="home_city" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_home_city'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html

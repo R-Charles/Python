@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+</head>
+<div id="header">
+    <div id="l-header">
+        <h1>Arbortray</h1>
+        <p>A site to track randomly planted trees</p>
+    </div>
+    <div id="r-header">
+    <p>
+        <a href="/planted"><button>Dashboard</button></a>
+    </p>
+        <p>
+            <a href="/user/logout"><button>Logout</button></a>
+        </p>
+    </div>
+    <a href="/user/account"><button>My Trees</button></a>
+</div>
+<body>
+                {#{% for planted_tree in current_planted_tree %}#}
+            <div>
+                {{current_planted_tree.species}} planted by {{session['first_name']}}{{session['last_name']}}
+            </div>
+            <div>
+                {{current_planted_tree.location}}
+            </div>
+            <div>
+                {{current_planted_tree.date_planted}}
+            </div>
+            <div>
+                {{current_planted_tree.reason}}
+            </div>
+    </table>
+</body>
+</html>
+
+
+<!-- why isnt my code saving to the database when i add new users -->
+<!-- <div id="heading1">
+</div> -->
+<!-- <div id="gry"><a href="/shows">Shows</a></div> -->

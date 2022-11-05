@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+</head>
+
+<body>
+    <h1>Arbortrary</h1>
+    <p>
+        <a href="/planted"><button>Dashboard</button></a>  
+    </p>
+    <p>
+        <a href="/user/logout"><button>Logout</button></a>
+    </p>
+
+    <a href="/user/account"><button>My Trees</button></a>
+
+    
+    <div id="sub-header"class="title">
+        <h2>Re-Plant Your Tree</h2>
+    </div>
+    <form method="POST" action="/planted/update/{{current_planted_tree.id}}">
+        <div>
+            <label>
+                Species:
+            </label>
+            <input type="text" name="species" value="{{current_planted_tree.species}}"/> 
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_species'] ) %}
+                {{message}}
+            {% endfor %}
+        </div> 
+        <div>
+            <label>
+                Location:
+            </label>
+            <textarea type="text" name="location"> {{current_planted_tree.location}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_location'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Reason:
+            </label>
+            <textarea type="text" name="reason"> {{current_planted_tree.reason}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_reason'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date Planted:
+            </label>
+            <input type="date" name="date_planted" value="{{current_planted_tree.date_planted}}" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_date_planted'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+        <a href="/planted"><button>Update</button></a>
+    </form>
+</body>
+</html

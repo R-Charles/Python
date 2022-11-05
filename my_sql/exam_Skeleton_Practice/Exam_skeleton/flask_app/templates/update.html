@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+</head>
+
+<style>
+    body{
+        background-color:#99cfff;
+background-image:
+radial-gradient(at 97% 22%, hsla(87,63%,77%,1) 0px, transparent 50%),
+radial-gradient(at 33% 62%, hsla(11,91%,73%,1) 0px, transparent 50%),
+radial-gradient(at 11% 26%, hsla(355,82%,68%,1) 0px, transparent 50%),
+radial-gradient(at 65% 91%, hsla(97,96%,69%,1) 0px, transparent 50%),
+radial-gradient(at 63% 49%, hsla(235,91%,69%,1) 0px, transparent 50%),
+
+    }
+
+</style>
+
+<body>
+    <h1>Arbortrary</h1>
+    <p>
+        <a href="/band"><button>Dashboard</button></a>
+    </p>
+    <p>
+        <a href="/user/logout"><button>Logout</button></a>
+    </p>
+    <form method="POST" action="/band/update/{{current_band.id}}">
+        <div>
+            <label>
+                Name:
+            </label>
+            <input type="text" name="name" value="{{current_band.name}}"/> 
+            {% for message in get_flashed_messages(category_filter = ['error_band_name'] ) %}
+                {{message}}
+            {% endfor %}
+        </div> 
+        </div>
+        <div>
+            <label>
+                Description:
+            </label>
+            <textarea type="text" name="description"> {{current_band.genre}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_band_name'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Instructions:
+            </label>
+            <textarea type="text" name="instructions"> {{current_band.instructions}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_band_instructions'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date cooked/made:
+            </label>
+            <input type="date" name="cooked_date" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_band_cooked_date'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Under 30 minutes:
+            </label>
+            <div>
+                Yes: <input type="radio" name="under_30" value="1" 
+                        {% if current_band_tree.under_30 == 1 %} checked {% endif %} />
+                No: <input type="radio" name="under_30" value="0" 
+                        {% if current_band_tree.under_30 == 0 %} checked {% endif %} />
+            </div>
+        </div>
+
+        <button>Submit</button>1
+    </form>
+</body>
+</html

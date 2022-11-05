@@ -1,0 +1,25 @@
+SELECT * FROM dojos;
+SELECT * FROM ninjas;
+DELETE * FROM dojos('Dojo1'), ('Dojo2'), ('Dojo3');
+INSERT INTO ninjas(first_name, last_name, age, dojos_id)
+VALUES ('John', 'Carlito', 18, 4), ('Renee', 'Simpson', 24, 4), ('Yoshii', 'Aburai', 32, 4);
+
+INSERT INTO ninjas(first_name, last_name, age, dojos_id)
+VALUES ('Nelson', 'Fuller', 18, 4), ('Abbot', 'Raiyes', 24, 4), ('Kosho', 'Igarii', 32, 4);
+
+UPDATE ninjas SET
+dojos_id = 5
+WHERE id > 3;
+
+INSERT INTO ninjas(first_name, last_name, age, dojos_id) 
+VALUES ('Allison', 'Mack', 30, 6), ('Joshua', 'Raiyes', 24, 6), ('Kosho', 'Shinogi', 25, 6);
+
+SELECT * FROM ninjas
+WHERE id < 4;
+
+SELECT * FROM ninjas
+WHERE id > 6;
+
+SELECT dojos.id, ninjas.dojos_id, ninjas.first_name, ninjas.last_name
+FROM ninjas
+JOIN dojos ON dojos_id = ninjas.dojos_id;

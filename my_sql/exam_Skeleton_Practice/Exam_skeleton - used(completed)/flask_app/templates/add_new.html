@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+</head>
+<div>
+    <h1>Arbortrary</h1>
+</div>
+<div>
+    <h3>A site to track randomly planted trees</h3>
+</div>
+<div>
+    <p>
+        <a href="/planted"><button>Dashboard</button></a>
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout"><button>Logout</button></a>
+    </p>
+</div>
+
+<a href="/user/account"><button>My Trees</button></a>
+
+<body>
+<div id="sub-header"class="title">
+    <h2>Arbitrarily Plant a Tree</h2>
+</div>
+    <form method="POST" action="/planted/new">
+        </div>
+        <div>
+            <label>
+                Species:
+            </label>
+            <input type="text" name="species"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_Planted Tree_species'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Location:
+            </label>
+            <input type="text" name="location"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_Planted Tree_location'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date Planted:
+            </label>
+            <input type="date" name="date_planted"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_Planted Tree_date'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Reason:
+            </label>
+            <textarea type="text" name="reason" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_Planted Tree_reason'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+
+        <button type="submit">Plant</button>
+    </form>
+</body>
+</html

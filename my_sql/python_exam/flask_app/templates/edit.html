@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Recipe</title>
+</head>
+<!-- login and registration -->
+<body>
+    <h1>Edit recipe</h1>
+    <p>
+        <a href="/dashboard">
+            Dashboard 
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout">
+            Logout
+        </a>
+    </p>
+    <form method="POST" action="/edit/{{current_sighting.id}}">
+        <div>
+            <label>
+                Location:
+            </label>
+            <input type="text" name="location" /> 
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_location'] ) %}
+                {{message}}
+            {% endfor %}
+        </div>
+        </div>
+        <div>
+            <label>
+                What Happened:
+            </label>
+            <textarea type="text" name="description" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_description'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date of Sighting:
+            </label>
+            <input type="date" name="date_sighted" ></input>
+            {% for message in get_flashed_messages(category_filter = ['error_date_sighted'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                # of Sasquatches:
+            </label>
+            <input type="text" name="sightings"></input>
+            {% for message in get_flashed_messages(category_filter = ['error_sightings'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+        <button>Submit</button>1
+    </form>
+</body>
+</html

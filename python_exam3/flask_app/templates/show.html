@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealz</title>
+</head>
+<body>
+    <p>
+        <a href="/cars">
+            Dashboard 
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout">
+            Logout
+        </a>
+    </p>
+
+                {#{% for car in current_car %}#}
+            <div>
+                {{current_car.price}} 
+            </div>
+            <div>
+                on {{current_car.model}}
+            </div>
+            <div>
+                {{current_car.make}}
+            </div>
+            <div>
+                {{current_car.year}}
+            </div>
+            <div>
+                {{current_car.description}}
+            </div>
+            <div>
+                {{session['first_name']}}{{session['last_name']}}
+            </div>
+            <button type="submit">Purchase</button>
+
+    </table>
+</body>
+</html>
+
+
+<!-- why isnt my code saving to the database when i add new users -->
+<!-- <div id="heading1">
+</div> -->
+<!-- <div id="gry"><a href="/shows">Shows</a></div> -->

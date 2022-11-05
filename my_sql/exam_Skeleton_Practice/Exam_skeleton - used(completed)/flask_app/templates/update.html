@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbortrary</title>
+</head>
+<!-- login and registration -->
+<body>
+    <h1>Arbortrary</h1>
+    <p>
+        <a href="/planted"><button>Dashboard</button></a>
+    </p>
+    <p>
+        <a href="/user/logout"><button>Logout</button></a>
+    </p>
+    <form method="POST" action="/planted/update/{{current_planted_tree.id}}">
+        <div>
+            <label>
+                Name:
+            </label>
+            <input type="text" name="name" value="{{current_planted_tree.name}}"/> 
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_name'] ) %}
+                {{message}}
+            {% endfor %}
+        </div> 
+        </div>
+        <div>
+            <label>
+                Description:
+            </label>
+            <textarea type="text" name="description"> {{current_planted_tree.description}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_description'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Instructions:
+            </label>
+            <textarea type="text" name="instructions"> {{current_planted_tree.instructions}} </textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_instructions'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date cooked/made:
+            </label>
+            <input type="date" name="cooked_date" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_planted_tree_cooked_date'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Under 30 minutes:
+            </label>
+            <div>
+                Yes: <input type="radio" name="under_30" value="1" 
+                        {% if current_planted_tree.under_30 == 1 %} checked {% endif %} />
+                No: <input type="radio" name="under_30" value="0" 
+                        {% if current_planted_tree.under_30 == 0 %} checked {% endif %} />
+            </div>
+        </div>
+
+        <button>Submit</button>1
+    </form>
+</body>
+</html

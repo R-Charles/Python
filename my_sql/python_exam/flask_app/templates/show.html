@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+</head>
+<body>
+    <div id="heading1">
+        <h1>
+        Sasquatch Websighting
+        </h1>
+        <h3>
+            {{session['first_name']}}
+        </h3>
+    </div>
+    <p>
+        <a href="/new/sighting">
+            Create 
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout">
+            Logout
+        </a>
+    </p>
+    <div>
+        <h2>Report a Sighting</h2>
+    </div>
+    <table>
+        <tr>
+            <th>
+                Location 
+            </th>
+            <th> 
+                Date sighting 
+            </th>
+            <th> 
+                What Happened
+            </th>
+            <th> 
+                # of Sasquatches:
+            </th>
+        </tr>
+        {% for sighting in sightings_list: %}
+        <tr> 
+            <td>
+                {{sighting.location}} 
+            </td>
+            <td>
+                on {{sighting.date_sighted}}
+            </td>
+            <td>
+                {{sighting.user.first_name}}
+            </td>
+            <td>
+                <a href="/sightings/{{sighting.id}}">
+                    View Sighting
+                </a>
+                {% if session['users_id'] == sighting.user.id : %}  
+                <a href="/sightings/{{sighting.id}}/update" >
+                    Edit
+                </a>
+                <a href="/sightings/{{sighting.id}}/delete">
+                    Delete
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
