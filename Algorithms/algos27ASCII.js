@@ -21,3 +21,25 @@ function getASCII(c) {
   const ascii2 = getASCII(char2);
   console.log(`The ASCII value of ${char} is ${ascii}`);
   console.log(`The ASCII value of ${char2} is ${ascii2}`);
+
+  /*
+
+  function getASCII(c) {
+    if (c.length === 1) {
+      const asciiValue = c.charCodeAt(0);
+      return asciiValue;
+    } else {
+      return "Input is not a single character";
+    }
+  }
+  
+  const char = "A";
+  const char2 = "f";
+  const ascii = getASCII(char);
+  const ascii2 = getASCII(char2);
+  console.log(`The ASCII value of ${char} is ${ascii}`);
+  console.log(`The ASCII value of ${char2} is ${ascii2}`);
+
+
+
+  */
